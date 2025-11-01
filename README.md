@@ -1,2 +1,4 @@
-# leetcode_practice
-My C++ LeetCode solutions and algorithm practice
+# My LeetCode Practice
+
+## Problems Solved:
+- Valid Anagram (#242) - Selection Sort & Optimized versions
