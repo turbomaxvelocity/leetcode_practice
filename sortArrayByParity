@@ -1,0 +1,35 @@
+//905
+//Given an integer array nums, move all the even integers at the beginning of the array followed by all the odd integers.
+//Return any array that satisfies this condition.
+
+class Solution {
+public:
+    vector<int> sortArrayByParity(vector<int>& nums) {
+        //two pointer approach
+        int left = 0;
+        int right = nums.size() - 1;
+        //continue until pointers meet
+        while (left < right){
+            //if left points to even and right points to odd both are correct
+            //move both pointers inward
+            if(nums[left] % 2 == 0 && nums[right] % 2 == 1){
+                left ++;
+                right --;
+            }
+            //if left points to even (correct postion), move left pointer
+            else if(nums[left] % 2 == 0){
+                left++;
+            }
+            //if right points to odd correct postions
+            else if(nums[right] % 2 == 1){
+                right--;
+            }
+            else{
+                swap(nums[left],nums[right]);
+                left++;
+                right--;
+            }
+        }
+        return nums;
+    }
+};
