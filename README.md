@@ -5,3 +5,4 @@
 - Sort Array by Parity (#905)
 - Intersection of Two Arrays (#349)
 - Merge Sorted Arrays (#88)
+- Roman to Integer (#13)
