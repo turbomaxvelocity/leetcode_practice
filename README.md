@@ -6,5 +6,5 @@
 - Intersection of Two Arrays (#349)
 - Merge Sorted Arrays (#88)
 - Roman to Integer (#13)
--Gas Station (#134)
--Maximum Distance in Array (#36)
+-Gas Station (#134)- Medium
+-Maximum Distance in Array (#36) - Medium
