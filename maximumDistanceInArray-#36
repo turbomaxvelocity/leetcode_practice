@@ -1,3 +1,8 @@
+/*
+ * Maximum Distance in Arrays (LeetCode 624)
+ * One-pass solution: O(m) time, O(1) space
+ */
+
 #include <cmath>
 class Solution {
 public:
