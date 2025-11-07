@@ -1,0 +1,20 @@
+#include <cmath>
+class Solution {
+public:
+    int maxDistance(vector<vector<int>>& arrays) {
+        int minValue = arrays[0][0];
+        int maxValue = arrays[0].back();
+        int maxDistance = 0;
+        for (int i = 1; i < arrays.size(); ++i) {
+            int currentMin = arrays[i][0];
+            int currentMax = arrays[i].back();
+
+            //calculate distance
+            maxDistance = max(maxDistance,abs(currentMax - minValue));
+            maxDistance = max(maxDistance,abs(maxValue - currentMin));
+            minValue = min(minValue, currentMin);
+            maxValue = max(maxValue, currentMax);
+        }
+        return maxDistance;
+    }
+};
