@@ -1,0 +1,23 @@
+// Greedy O(n) solution: if we fail at station i starting from station j,
+// then no station between j and i can be a valid start
+
+class Solution {
+public:
+    int canCompleteCircuit(vector<int>& gas, vector<int>& cost) {
+        int n = gas.size();
+        int total = 0;
+        int currentGas = 0;
+        int start = 0;
+        for (int i = 0; i < n; i++) {
+            int netGain = gas[i] - cost[i];
+            total += netGain;
+            currentGas += netGain;
+            if (currentGas < 0) {
+                //next station becomes new canidate
+                start = i + 1;
+                currentGas = 0;//reset tank
+            }
+        }
+        return (total >= 0) ? start : -1 ;
+    }
+};
