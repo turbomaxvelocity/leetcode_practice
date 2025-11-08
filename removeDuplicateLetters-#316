@@ -1,0 +1,38 @@
+// Greedy stack: remove char if larger AND appears later in string
+// Result: lexicographically smallest with no duplicates
+// Time: O(n), Space: O(1)
+
+#include <unordered_map>
+#include <unordered_set>
+
+class Solution {
+public:
+    string removeDuplicateLetters(string s) {
+        //count frequency of each char
+        unordered_map<char, int> count;
+        for (char c : s) {
+            count[c]++;
+        }
+        //track which chars are in current result
+        unordered_set<char> inStack;
+        string result = "";
+        for ( char c : s) {
+            //decrease count as we process char
+            count[c]--;
+            //skip if we already in result
+            if (inStack.count(c)) {
+                continue;
+            }
+            //remove larger char if appear later
+            while (!result.empty()&& result.back()> c &&count[result.back()]>0) {
+                char removed = result.back();
+                result.pop_back();
+                inStack.erase(removed);
+            }
+            //add current char
+            result.push_back(c);
+            inStack.insert(c);
+        }
+        return result;
+    }
+};
