@@ -1,0 +1,31 @@
+// Division without using *, /, or % operators
+// Uses bit shifting to subtract exponentially larger multiples of divisor
+// Time: O(log²n), Space: O(1)
+// Beats 100% runtime on LeetCode
+
+class Solution {
+public:
+    int divide(int dividend, int divisor) {
+        if(dividend == INT_MIN && divisor == -1){
+            return INT_MAX;
+        }
+        //determine sign of the result
+        bool negative = (dividend < 0) ^ (divisor < 0);
+        //work with positive numbers (use long to avoid overflow)
+        long dvd = abs((long)dividend);
+        long dvs = abs((long)divisor);
+        long quotient = 0;
+        while(dvd >= dvs){
+            long temp = dvs;
+            long multiple = 1;
+            //double temp until its bigger than dvd
+            while (dvd >= (temp << 1)){
+                temp <<= 1; //temp = temp * 2
+                multiple <<= 1;
+            }
+            dvd -= temp;
+            quotient += multiple;
+        }
+        return negative ? -quotient : quotient;
+    }
+};
