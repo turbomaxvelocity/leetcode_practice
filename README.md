@@ -10,4 +10,5 @@
 - Maximum Distance in Array (#36) - Medium
 - Remove All Duplicates Letters (#316) - Medium
 - Candy (#135) - Hard
-- Divide By Two Integers (#29) - Medium 
+- Divide By Two Integers (#29) - Medium
+- Reversed Linked List (#206) - Easy
