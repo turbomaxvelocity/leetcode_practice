@@ -12,3 +12,4 @@
 - Candy (#135) - Hard
 - Divide By Two Integers (#29) - Medium
 - Reversed Linked List (#206) - Easy
+- Randsom Note (#383) - Easy 
