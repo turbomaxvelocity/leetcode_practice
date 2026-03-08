@@ -1,0 +1,19 @@
+class Solution {
+public:
+    bool canConstruct(string ransomNote, string magazine) {
+        int counts[26]={0};
+
+        //count available letters in magazine
+        for(char c : magazine){
+            counts[ c- 'a']++;
+        }
+        //check if ransomNote can be formed
+        for(char c : ransomNote){
+            if(--counts[c-'a'] < 0){
+                return false;
+            }
+        }
+    
+    return true;
+    }
+};
